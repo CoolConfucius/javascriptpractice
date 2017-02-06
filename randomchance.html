@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+  "use strict"; 
+  function slotmachine(quarters){
+    quarters--; 
+    var win = Math.floor(Math.random()*100); 
+    console.log('win: ', win);
+    if(win > 50){
+      var lottery = Math.floor(Math.random()*50+50); 
+      console.log('lottery: ', lottery);
+    }
+    quarters += lottery; 
+    return quarters; 
+  }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
