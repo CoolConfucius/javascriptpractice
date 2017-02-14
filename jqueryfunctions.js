@@ -9,11 +9,8 @@ $(document).ready(function(){
     // $("#slidetoggle > .imgblock").slideToggle("slow", function(){
     //   console.log("toggle success!");
     // }); 
-    $("#imgblock").slideToggle(300); 
+    $("#imgblock").toggle(300); 
     event.stopPropagation(); 
   })
 
-  $("#imgblock").click(function(){
-    $("#imgblock").slideToggle(300); 
-  })
 })
