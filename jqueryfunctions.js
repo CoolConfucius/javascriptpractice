@@ -12,4 +12,8 @@ $(document).ready(function(){
     $("#imgblock").slideToggle(300); 
     event.stopPropagation(); 
   })
+
+  $("#imgblock").click(function(){
+    $("#imgblock").slideToggle(300); 
+  })
 })
