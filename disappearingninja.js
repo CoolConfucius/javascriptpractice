@@ -1,20 +1,12 @@
 $(document).ready(function(){
-  $("#restore").on('click', '.ninja', function(){
-    console.log("button clicked!");
-    // $("#addclass > p").addClass("red"); 
-    $(this).children("img").toggle(300);
+  $(".ninja").on('click', 'img', function(){
+    console.log("img clicked!");
+    $(this).toggle(300);
   })
 
-  // $("#slidetoggle").on('click', 'button', function(event){
-  //   console.log("button clicked!");
-  //   $("#imgblock").toggle(300); 
-  //   event.stopPropagation(); 
-  // })
-
-  // $("#append").on('click', 'button', function(){
-  //   console.log("button clicked!");
-  //   var $newp = $("<p>").text("new paragraph!");
-  //   $("#append").append($newp); 
-  // })
+  $("#restore").click(function(){
+    console.log("restore!");
+    $(".ninja > img").show();
+  })
 
 })
