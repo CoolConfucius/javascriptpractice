@@ -21,7 +21,10 @@ $(document).ready(function(){
   })
 
   $('#form').submit(function(){
-    console.log("Submit!")  
+    console.log("Submit!")
+    var $newrow = $("<tr>");
+    $newrow.text($(this).serialize());
+    $('#table').append($newrow);
     return false;
   });
 })
