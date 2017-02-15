@@ -12,8 +12,12 @@ function hardsubmit(){
 $(document).ready(function(){
   attach_handlers(); 
   $('#h1').click(function(){
-    var $newbutton = $("<button>").attr("id")="hardsubmit".text("Hard Submit!");
-    $('#form').after()
+    console.log("click");
+    var $newbutton = $("<button>");
+    $newbutton.attr("id", "hardsubmit");
+    $newbutton.text("Hard Submit!");
+    $('#form').after($newbutton);
+    attach_handlers();
   })
 
   $('#form').submit(function(){
