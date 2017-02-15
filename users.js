@@ -1,31 +1,40 @@
 function attach_handlers(){
   console.log("attach_handlers");
-  $(".ninja").on('click', 'img', ninjacat);  
+  $("#hardsubmit").click(hardsubmit);  
 }
 
-function ninjacat(){
-  console.log("img clicked!");
-  console.log($(this).attr("src"));
-  console.log($(this).attr("data-alt-src"));
-  $(this).attr("src", $(this).attr("data-alt-src"));  
+function hardsubmit(){
+  console.log("Hard");
+  $("#form").submit(); 
 }
+
 
 $(document).ready(function(){
-  $("#addclass").on('click', 'button', function(){
-    console.log("button clicked!");
-    $("#addclass > p").addClass("red"); 
+  attach_handlers(); 
+  $('#h1').click(function(){
+    var $newbutton = $("<button>").attr("id")="hardsubmit".text("Hard Submit!");
+    $('#form').after()
   })
 
-  $("#slidetoggle").on('click', 'button', function(event){
-    console.log("button clicked!");
-    $("#imgblock").toggle(300); 
-    event.stopPropagation(); 
-  })
+  $('#form').submit(function(){
+    console.log("Submit!")  
+    return false;
+  });
+  // $("#addclass").on('click', 'button', function(){
+  //   console.log("button clicked!");
+  //   $("#addclass > p").addClass("red"); 
+  // })
 
-  $("#append").on('click', 'button', function(){
-    console.log("button clicked!");
-    var $newp = $("<p>").text("new paragraph!");
-    $("#append").append($newp); 
-  })
+  // $("#slidetoggle").on('click', 'button', function(event){
+  //   console.log("button clicked!");
+  //   $("#imgblock").toggle(300); 
+  //   event.stopPropagation(); 
+  // })
+
+  // $("#append").on('click', 'button', function(){
+  //   console.log("button clicked!");
+  //   var $newp = $("<p>").text("new paragraph!");
+  //   $("#append").append($newp); 
+  // })
 
 })
