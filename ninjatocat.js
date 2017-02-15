@@ -1,3 +1,7 @@
+function attach_handlers(){
+  $(".ninja").on('click', 'img', ninjacat);  
+}
+
 function ninjacat(){
   console.log("img clicked! callback");
   console.log($(this).attr("src"));
@@ -6,5 +10,5 @@ function ninjacat(){
 }
 
 $(document).ready(function(){
-  $(".ninja").on('click', 'img', ninjacat);
+  attach_handlers(); 
 })
