@@ -23,7 +23,14 @@ $(document).ready(function(){
   $('#form').submit(function(){
     console.log("Submit!")
     var $newrow = $("<tr>");
-    $newrow.text($(this).serialize());
+    var serial = $(this).serialize();
+    var $first = $("<td>").text($("#first").val()); 
+    var $last = $("<td>").text($("#last").val()); 
+    var $email = $("<td>").text($("#email").val()); 
+    var $contact = $("<td>").text($("#contact").val()); 
+    $newrow.append($first).append($last).append($email).append($contact);
+    console.log(serial);
+    $newrow.text();
     $('#table').append($newrow);
     return false;
   });
