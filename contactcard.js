@@ -1,38 +1,35 @@
 function attach_handlers(){
   console.log("attach_handlers");
-  $("#hardsubmit").click(hardsubmit);  
+  $('.clickfordescription').click(toggledescription);
 }
 
-function hardsubmit(){
-  console.log("Hard");
-  $("#form").submit(); 
+function toggledescription(){
+  console.log("toggle");
+  var $parent = $(this).parent(); 
+  if ($parent.hasClass("front")) {
+    $parent.removeClass("front"); 
+    $parent.addClass("back"); 
+    $parent.children(".name, .clickfordescription").hide(); 
+    $parent.children(".description").show(); 
+  };
 }
 
 
 $(document).ready(function(){
-  attach_handlers(); 
-  $('#h1').click(function(){
-    console.log("click");
-    var $newbutton = $("<button>");
-    $newbutton.attr("id", "hardsubmit");
-    $newbutton.text("Hard Submit!");
-    $('#form').after($newbutton);
-    attach_handlers();
-  })
-
   $('#form').submit(function(){
     console.log("Submit!")
-    var $newcard = $("<li>").addClass("card");
+    var $newcard = $("<li>").addClass("card").addClass("front");
     var serial = $(this).serialize();
-    var $name = $("<h2>").text($("#first").val() + " " + $("#last").val()); 
-    var $click = $("<p>").text("click for description"); 
+    var $name = $("<h2>").addClass("name").text($("#first").val() + " " + $("#last").val()); 
+    var $click = $("<p>").addClass("clickfordescription").text("click for description"); 
     var description = $("#description").val();
-    var $description = $("<p>").text(description); 
-    $newcard.append($name).append($click);
+    var $description = $("<p>").addClass("description").text(description).hide(); 
+    $newcard.append($name).append($click).append($description);
     $newcard.data("description", description); 
     console.log(serial);
     $newcard.text();
     $('#cards').append($newcard);
+    attach_handlers();
     return false;
   });
 })
