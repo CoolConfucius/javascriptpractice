@@ -18,8 +18,10 @@ $(document).ready(function(){
    })
    $('.side_box').click(function(event){
       event.stopPropagation();
+      $(this).siblings().css("background-color", random_color().toString()); 
    })
    $('.middle_box').click(function(event){
       event.stopPropagation();
+      $(this).parent().css("background-color", random_color().toString()); 
    })
 });
