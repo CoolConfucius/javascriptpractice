@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+  crossorigin="anonymous"></script>
+  <script src="contactcard.js"></script>
+  <style>
+    .card {
+      border: solid;
+      /*vertical-align: text-top;*/
+    }
+    #wrapper {
+      /*display: inline-block;*/
+      /*vertical-align: text-top;*/
+    }
+    #form, #cards {
+      vertical-align: text-top;
+      display: inline-block;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <form id="form" action="">
+      <label for="first">First</label>
+      <input type="text" name="first" id="first" value="first"><br>
+      <label for="last">Last</label>
+      <input type="text" name="last" id="last" value="last"><br>
+      <label for="description">Description:</label><br>
+      <textarea name="description" id="description" cols="30" rows="10">Description</textarea><br><br>
+      <input type="submit" value="Add User">
+    </form>
+    
+    <ul id="cards"></ul>
+  </div>
+</body>
+</html>
