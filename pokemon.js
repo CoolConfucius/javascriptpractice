@@ -29,8 +29,4 @@ $(document).ready(function(){
     $("body").append($img); 
   };
   attach_handlers(); 
-
-  // $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
-  //     console.log(res);
-  // }, "json");
 })
