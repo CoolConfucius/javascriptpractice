@@ -1,23 +1,4 @@
 
-// function attach_handlers(){
-//   console.log("attach_handlers");
-//   // $(".pokemon").click(showweather);  
-//   $(".pokemon").click(showweather);  
-// }
-
-// function showweather(e){
-//   e.stopPropagation(); 
-//   console.log("Pokemon");
-//   var id = $(this).attr("id")
-//   console.log("Id: ", id);
-//   var number = id.substr(1, id.length);
-//   console.log(number);
-//   $.get("http://pokeapi.co/api/v1/pokemon/"+number+"/", function(res) {
-//       console.log(res);
-//   }, "json");
-
-  
-// }
 
 $(document).ready(function(){
   $('#form').submit(function() {
@@ -29,11 +10,21 @@ $(document).ready(function(){
       var city = $("#input").val(); 
       console.log(city);
       var url = head + city + tail; 
-      // your code here (build up your url)
+      
       $.get(url, function(res) {
           console.log(res);
+          var $div = $("<div>"); 
+          var $h1 = $("<h1>").text(res.name); 
+          var temp = " ";
+          if (res.main && res.main.temp) {
+            temp = res.main.temp; 
+          };
+          var $p = $("<p>").text("Temperature: " + temp); 
+          $div.append($h1); 
+          $div.append($p);
+          $("body").append($div);
       }, 'json');
-      // don't forget to return false so the page doesn't refresh
+      
       return false;
   });
 })
